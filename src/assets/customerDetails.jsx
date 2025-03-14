@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./customerDet.css";
+import React from "react";
 export default function CustomerDetailsForm() {
   const [formData, setFormData] = useState({
     newName: "",
