@@ -109,31 +109,31 @@ export default function CustomerDetailsForm() {
           <option value="">Select TV Plan</option>
           <option value="none">None</option>
           <option value="basic">Basic TV</option>
-          <option value="standard">3 theme</option>
-          <option value="standard">4 theme and 1 premium</option>
-          <option value="premium">7 theme and 1 premium</option>
-          <option value="premium">11 theme and 2 premium</option>
+          <option value="3 theme">3 theme</option>
+          <option value="4 theme and 1 premium">4 theme and 1 premium</option>
+          <option value="7 theme and 1 premium">7 theme and 1 premium</option>
+          <option value="11 theme and 2 premium">11 theme and 2 premium</option>
         </select>
 
         <label>Internet Plan</label>
         <select name="internetPlan" value={formData.internetPlan} onChange={handleChange} required>
           <option value="">Select Internet Plan</option>
           <option value="none">None</option>
-          <option value="basic">250 MBPS</option>
-          <option value="standard">1 GIG</option>
-          <option value="premium">3 GIG</option>
+          <option value="250 MBPS">250 MBPS</option>
+          <option value="1 GIG">1 GIG</option>
+          <option value="3 GIG">3 GIG</option>
         </select>
 
         <label>Security System</label>
         <select name="security" value={formData.security} onChange={handleChange} required>
           <option value="">Select Security Options</option>
           <option value="none">None</option>
-          <option value="HV">Home View</option>
-          <option value="Auto">Automation</option>
-          <option value="Secure">Secure</option>
-          <option value="SV">Secure Plus Video</option>
-          <option value="SC">Secure Plus Control</option>
-          <option value="CV">Control Plus Video</option>
+          <option value="home-view">Home View</option>
+          <option value="automation">Automation</option>
+          <option value="secure">Secure</option>
+          <option value="secure-plus-video">Secure Plus Video</option>
+          <option value="secure-plus-control">Secure Plus Control</option>
+          <option value="control-plus-video">Control Plus Video</option>
         </select>
 
         <label>
