@@ -19,7 +19,7 @@ export default function CustomerDetailsForm() {
     tvPlan: "",
     homePhonePlan: false,
     internetPlan: "",
-    internetSpeed: "",
+    security: "",
   });
 
   const handleChange = (e) => {
@@ -54,7 +54,7 @@ export default function CustomerDetailsForm() {
         tvPlan: "",
         homePhonePlan: false,
         internetPlan: "",
-        internetSpeed: "",
+        security: "",
       });
     } else {
       alert("Error submitting form. Please try again.");
@@ -107,6 +107,7 @@ export default function CustomerDetailsForm() {
         <label>TV Plan</label>
         <select name="tvPlan" value={formData.tvPlan} onChange={handleChange} required>
           <option value="">Select TV Plan</option>
+          <option value="none">None</option>
           <option value="basic">Basic TV</option>
           <option value="standard">3 theme</option>
           <option value="standard">4 theme and 1 premium</option>
@@ -117,20 +118,22 @@ export default function CustomerDetailsForm() {
         <label>Internet Plan</label>
         <select name="internetPlan" value={formData.internetPlan} onChange={handleChange} required>
           <option value="">Select Internet Plan</option>
+          <option value="none">None</option>
           <option value="basic">250 MBPS</option>
           <option value="standard">1 GIG</option>
           <option value="premium">3 GIG</option>
         </select>
 
         <label>Security System</label>
-        <select name="security" value={formData.internetSpeed} onChange={handleChange} required>
+        <select name="security" value={formData.security} onChange={handleChange} required>
           <option value="">Select Security Options</option>
+          <option value="none">None</option>
           <option value="HV">Home View</option>
           <option value="Auto">Automation</option>
           <option value="Secure">Secure</option>
           <option value="SV">Secure Plus Video</option>
-          <option value="SV">Secure Plus Control</option>
-          <option value="SV">Control Plus Video</option>
+          <option value="SC">Secure Plus Control</option>
+          <option value="CV">Control Plus Video</option>
         </select>
 
         <label>
