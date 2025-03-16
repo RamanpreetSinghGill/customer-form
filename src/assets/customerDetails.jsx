@@ -6,6 +6,7 @@ export default function CustomerDetailsForm() {
     newName: "",
     newEmail: "",
     newPhone: "",
+    address: "",
     idType: "",
     idNumber: "",
     idExpiry: "",
@@ -13,10 +14,17 @@ export default function CustomerDetailsForm() {
     oldName: "",
     oldDob: "",
     oldPin: "",
+    oldPhone: "",
+    promisedNotes: "",
+    tvPlan: "",
+    homePhonePlan: false,
+    internetPlan: "",
+    internetSpeed: "",
   });
 
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    const value = e.target.type === 'checkbox' ? e.target.checked : e.target.value;
+    setFormData({ ...formData, [e.target.name]: value });
   };
 
   const handleSubmit = async (e) => {
@@ -33,6 +41,7 @@ export default function CustomerDetailsForm() {
         newName: "",
         newEmail: "",
         newPhone: "",
+        address: "",
         idType: "",
         idNumber: "",
         idExpiry: "",
@@ -40,6 +49,12 @@ export default function CustomerDetailsForm() {
         oldName: "",
         oldDob: "",
         oldPin: "",
+        oldPhone: "",
+        promisedNotes: "",
+        tvPlan: "",
+        homePhonePlan: false,
+        internetPlan: "",
+        internetSpeed: "",
       });
     } else {
       alert("Error submitting form. Please try again.");
@@ -59,6 +74,9 @@ export default function CustomerDetailsForm() {
         <label>Phone</label>
         <input type="text" name="newPhone" value={formData.newPhone} onChange={handleChange} required />
 
+        <label>Address</label>
+        <input type="text" name="address" value={formData.address} onChange={handleChange} required />
+
         <label>ID Type</label>
         <input type="text" name="idType" value={formData.idType} onChange={handleChange} required />
 
@@ -74,11 +92,56 @@ export default function CustomerDetailsForm() {
         <label>Name (Old Customer)</label>
         <input type="text" name="oldName" value={formData.oldName} onChange={handleChange} required />
 
+        <label>Phone (Old Customer)</label>
+        <input type="text" name="oldPhone" value={formData.oldPhone} onChange={handleChange} required />
+
         <label>Date of Birth (Old Customer)</label>
         <input type="date" name="oldDob" value={formData.oldDob} onChange={handleChange} required />
 
         <label>Account PIN</label>
         <input type="password" name="oldPin" value={formData.oldPin} onChange={handleChange} required />
+
+        <label>Promised Notes</label>
+        <textarea name="promisedNotes" value={formData.promisedNotes} onChange={handleChange} rows="4" />
+
+        <label>TV Plan</label>
+        <select name="tvPlan" value={formData.tvPlan} onChange={handleChange} required>
+          <option value="">Select TV Plan</option>
+          <option value="basic">Basic TV</option>
+          <option value="standard">3 theme</option>
+          <option value="standard">4 theme and 1 premium</option>
+          <option value="premium">7 theme and 1 premium</option>
+          <option value="premium">11 theme and 2 premium</option>
+        </select>
+
+        <label>Internet Plan</label>
+        <select name="internetPlan" value={formData.internetPlan} onChange={handleChange} required>
+          <option value="">Select Internet Plan</option>
+          <option value="basic">250 MBPS</option>
+          <option value="standard">1 GIG</option>
+          <option value="premium">3 GIG</option>
+        </select>
+
+        <label>Security System</label>
+        <select name="security" value={formData.internetSpeed} onChange={handleChange} required>
+          <option value="">Select Security Options</option>
+          <option value="HV">Home View</option>
+          <option value="Auto">Automation</option>
+          <option value="Secure">Secure</option>
+          <option value="SV">Secure Plus Video</option>
+          <option value="SV">Secure Plus Control</option>
+          <option value="SV">Control Plus Video</option>
+        </select>
+
+        <label>
+          <input
+            type="checkbox"
+            name="homePhonePlan"
+            checked={formData.homePhonePlan}
+            onChange={handleChange}
+          />
+          Home Phone Plan
+        </label>
 
         <button type="submit">Submit</button>
       </form>
